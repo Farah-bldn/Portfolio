@@ -1,0 +1,774 @@
+
+/* Corps de base */
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fff8f9;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0px;
+    background-color: #ffccd5;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: 30px;
+}
+
+.logo-img {
+    width: 250px; /* Ajuste la taille de l'image */
+    height: 100px; /* Assure un format carré */
+    object-fit: cover; /* Ajuste l'image à l'intérieur du cadre */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+    margin: 0;
+    padding-right: 90px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 20px;
+    
+}
+
+nav ul li a:hover {
+    color: #ff85a1;
+}
+
+#hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.8em;
+    color: #fff;
+}    
+/* Section Accueil */
+#accueil {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    overflow: hidden; /* Empêche le débordement */
+    background-color: #f9f9f9; /* Arrière-plan neutre */
+}
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    padding: 50px 0; /* Couleur d'arrière-plan par défaut */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition douce pour le changement de couleur */
+    position: relative;
+}
+
+.intro-text {
+    flex: 1;
+    z-index: 2;
+    padding: 20px;
+    color: #333; /* Couleur du texte par défaut */
+    margin-left: 10%;
+    width: 80%;
+    transition: color 0.3s ease; /* Transition douce pour la couleur du texte */
+}
+
+.intro-text h1 {
+    font-size: 45px;
+    color:#000000;
+    animation: fadeIn 1s ease-out; 
+}
+
+.intro-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-out; /* Appliquer l'animation de fondu avec un léger délai */
+}
+
+.intro-text .button {
+    display: inline-block;
+    background-color: #ff577f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  
+}
+
+.intro-text .button:hover {
+    background-color: #ff577f;
+    transform: scale(1.05);
+}
+body.dark-mode #accueil {
+    background-color: #121212; /* Choisir une couleur sombre de fond */
+}
+
+body.dark-mode h1 {
+    color: #FFD700; /* Couleur dorée pour un contraste élevé */
+}
+body.dark-mode p {
+    color: #fff; /* S'assurer que le texte devient blanc en mode sombre */
+}
+/* Image en arrière-plan */
+.intro-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%; /* S'adapte à la hauteur de la fenêtre */
+    width: auto; /* Garde les proportions */
+    z-index: 1; /* Derrière le texte */
+    display: flex;
+}
+.intro-image img {
+    height: 100%;
+    width: auto; /* Ajuste la largeur pour ne pas déformer */
+    object-fit: cover; /* Remplit sans déformer */
+    filter: brightness(90%); /* Légèrement plus sombre pour lisibilité du texte */
+}
+
+.button {
+    background-color: #ff577f;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #ff85a1;
+}
+
+#projets, #competences, #a-propos, #contact {
+    padding: 50px 20px;
+    text-align: center;
+}
+/* === Section Projets === */
+#projets {
+    padding: 50px 20px;
+    background-color: #fff8f9;
+}
+
+.projects-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project {
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: 400px;
+    background: #f4f4f9;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Indique que c'est cliquable */
+}
+
+.project img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.project:hover img {
+    transform: scale(1.05); /* Légère mise à l'échelle */
+}
+
+.project p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.project-link {
+    display: inline-block;
+    background: #ff577f;;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.project-link:hover {
+    background-color: #ff85a1;
+}
+.tools-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color:#ff577f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.tools-button:hover {
+    background-color:#ff85a1;
+}
+
+.tools-list {
+    margin-top: 10px;
+    padding-left: 20px;
+    list-style-type: disc;
+    font-size: 14px;
+    color: #333;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s;
+}
+
+.modal-content h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.modal-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.modal-content .modal-link {
+    display: inline-block;
+    background-color:#ff577f;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.modal-content .modal-link:hover {
+    background-color: #ff85a1;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Mode sombre */
+body.dark-mode .modal-content {
+    background: #333;
+    color: #fff;
+}
+
+body.dark-mode .modal-content .modal-link {
+    background-color: #6a5acd;
+}
+
+body.dark-mode .modal-content .modal-link:hover {
+    background-color: #5a4bda;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill {
+    background-color: #ffe4e6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centrer le formulaire */
+    max-width: 100%;      /* Limiter la largeur du formulaire */
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* Champs du formulaire */
+form input, form textarea, form button {
+    width: 100%;           /* S'assurer que chaque champ occupe 100% de la largeur */
+    max-width: 500px;      /* Limiter la largeur des champs à 500px pour les grands écrans */
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Assurer que le padding est inclus dans la largeur */
+}
+
+/* Champs du formulaire en mode sombre */
+body.dark-mode form input, 
+body.dark-mode form textarea{
+    background-color: #333;  /* Fond sombre pour les champs */
+    color: #fff;             /* Texte clair */
+    border: 1px solid #555;  /* Bordure plus claire */
+}
+
+form button {
+    background-color: #ff577f;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #ff85a1;
+}
+@media (max-width: 768px) {
+    form {
+        padding: 10px;
+    }
+
+    /* Champs du formulaire : ajuster la taille des champs pour les petits écrans */
+    form input, form textarea, form button {
+        max-width: 90%;  /* Réduire la largeur maximale à 90% de l'écran pour les petits appareils */
+    }
+}
+
+/* Responsivité pour les très petits écrans */
+@media (max-width: 480px) {
+    form input, form textarea, form button {
+        max-width: 100%; /* S'assurer que les champs prennent toute la largeur de l'écran sur très petits écrans */
+    }
+
+    form button {
+        padding: 12px 20px; /* Ajuster la taille du bouton */
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #ffccd5;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Mode sombre : Bouton de bascule */
+#dark-mode-toggle {
+    position: absolute;  /* Positionner absolument par rapport à son conteneur */
+    top: 10px;           /* Ajuster la position verticale du bouton */
+    right: 20px;         /* Positionner à droite */
+    cursor: pointer;
+    z-index: 2000;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffe4e6;  /* Fond clair pour le bouton en mode normal */
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+/* Afficher les icônes en fonction du mode (clair ou sombre) */
+#dark-mode-toggle span {
+    display: none;
+}
+
+#dark-mode-toggle .light-mode {
+    display: inline;
+}
+
+body.dark-mode #dark-mode-toggle .light-mode {
+    display: none;
+}
+
+body.dark-mode #dark-mode-toggle .dark-mode {
+    display: inline;
+}
+
+/* Mode sombre : changer l'apparence du bouton de bascule */
+body.dark-mode #dark-mode-toggle {
+    background-color: #6a5acd;  /* Fond violet pour le bouton en mode sombre */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Bouton : effets au survol */
+#dark-mode-toggle:hover {
+    background-color: #ff85a1; /* Change la couleur au survol en mode normal */
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+    background-color: #5a4bda;  /* Change la couleur au survol en mode sombre */
+}
+
+/* Mode sombre : la couleur de l'icône du bouton */
+#dark-mode-toggle .light-mode {
+    color: #6a5acd; /* Couleur du soleil en mode normal (verte) */
+}
+
+body.dark-mode #dark-mode-toggle .light-mode {
+    color: #fff;  /* Icône "🌞" devient blanche en mode sombre */
+}
+
+body.dark-mode #dark-mode-toggle .dark-mode {
+    color: #fff;  /* Icône "🌙" devient blanche en mode sombre */
+}
+
+/* Mode sombre : changer le fond et les couleurs du texte */
+body.dark-mode {
+    background-color: #1e1e2f; /* Fond sombre */
+    color: #cfcfcf;             /* Texte clair */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Mode sombre : header */
+header.dark-mode {
+    background-color: #333;  /* Fond sombre pour le header */
+    color: #fff;             /* Texte clair pour le header */
+}
+
+/* Liens du menu dans le header en mode sombre */
+header.dark-mode nav ul li a {
+    color: #cfcfcf;  /* Liens clairs */
+}
+
+header.dark-mode nav ul li a:hover {
+    color: #ff85a1;  /* Liens clairs au survol */
+}
+
+/* Liens dans le menu de navigation en mode sombre */
+nav ul li a.dark-mode {
+    color: #cfcfcf;             /* Liens clairs */
+}
+
+
+body.dark-mode .project-link {
+    background: #6a5acd;
+}
+
+body.dark-mode .project-link:hover {
+    background: #5a4bda;
+}
+
+/* Projets en Mode Sombre */
+body.dark-mode .project {
+    background-color: #2b2b3d;
+    border: 1px solid #555;
+}
+
+body.dark-mode .project p {
+    color: #cfcfcf;
+}
+
+body.dark-mode .project img {
+    filter: brightness(0.8);
+}
+body.dark-mode #projets{
+    background-color: #333;  /* Fond sombre pour le header */
+    color: #fff;             /* Texte clair pour le header */
+}
+
+/* Boutons en mode sombre */
+.button.dark-mode {
+    background-color: #6a5acd;  /* Violet clair pour les boutons en mode sombre */
+    color: #fff;                /* Texte blanc */
+    border: none;
+}
+
+
+/* Bouton "Envoyer" en mode sombre */
+form button.dark-mode {
+    background-color: #6a5acd;  /* Violet clair pour le bouton */
+    color: #fff;                /* Texte en blanc */
+    border: none;
+    cursor: pointer;
+}
+
+form button.dark-mode:hover {
+    background-color: #5a4bda;  /* Couleur plus foncée au survol */
+}
+
+/* Footer en mode sombre */
+footer.dark-mode {
+    background-color: #333;  /* Fond sombre pour le footer */
+    color: #fff;             /* Texte clair */
+}
+
+/* Liens dans le footer en mode sombre */
+footer.dark-mode a {
+    color: #cfcfcf;  /* Liens clairs dans le footer */
+}
+
+footer.dark-mode a:hover {
+    color: #ff85a1;  /* Couleur au survol des liens */
+}
+
+/* Liens dans les projets en mode sombre */
+.project.dark-mode p {
+    color: #cfcfcf;  /* Texte clair pour la description du projet */
+}
+/* Mode sombre pour les titres (h1, h2, etc.) */
+h2 {
+    color: #333; /* Texte noir en mode normal */
+}
+
+/* Mode sombre : Tous les h2 seront blancs */
+body.dark-mode h2 {
+    color: #fff; /* Texte blanc en mode sombre */
+}
+h1, h3, h4, h5, h6 {
+    color: #fff;     /* Titre en blanc dans le mode sombre */
+}
+
+/* Mode sombre pour les sections */
+section.dark-mode {
+    background-color: #2b2b3d; /* Fond plus sombre pour les sections */
+    padding: 50px 20px;
+}
+
+/* Mode sombre pour les formulaires */
+form input.dark-mode, 
+form textarea.dark-mode {
+    background-color: #333;  /* Fond sombre pour les champs de formulaire */
+    color: #fff;             /* Texte clair */
+    border: 1px solid #555;  /* Bordure plus claire */
+}
+
+form input.dark-mode::placeholder,
+form textarea.dark-mode::placeholder {
+    color: #aaa;  /* Texte des placeholders en gris clair */
+}
+
+
+/* Afficher des bordures et ombres en mode sombre */
+.project.dark-mode {
+    border: 1px solid #555;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Amélioration de l'affichage des liens dans le mode sombre */
+a.dark-mode {
+    color: #cfcfcf; /* Liens clairs */
+}
+
+a.dark-mode:hover {
+    color: #ff85a1; /* Liens colorés au survol */
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    #hamburger {
+        display: block;
+
+    }
+    #dark-mode-toggle{
+            margin-right: 20px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction:column;
+        gap: 5px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .projects-gallery {
+        flex-direction: column;
+    }
+
+    .project {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .projects-gallery {
+        flex-direction: column;
+    }
+}
+/* Liens sociaux dans la section contact */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;  /* Espacement entre les icônes */
+    margin-top: 20px;
+}
+
+/* Icônes des réseaux sociaux */
+.social-links a img {
+    width: 40px;  /* Taille des icônes */
+    height: 40px;
+    transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+/* Effet au survol des icônes */
+.social-links a img:hover {
+    transform: scale(1.2);  /* Agrandir l'icône au survol */
+}
+
+/* Style général pour les icônes SVG */
+.social-links a svg {
+    fill: #333; /* Noir par défaut (mode clair) */
+    width: 40px; /* Taille uniforme des icônes */
+    height: 40px;
+    transition: fill 0.3s ease, transform 0.3s ease; /* Transition fluide */
+}
+
+/* Effet au survol des icônes */
+.social-links a svg:hover {
+    fill: #ff85a1; /* Couleur accentuée au survol */
+}
+
+/* Mode sombre : Icônes blanches */
+body.dark-mode .social-links a svg {
+    fill: #fff; /* Blanc en mode sombre */
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Le texte commence invisible */
+        transform: translateY(20px); /* Le texte commence légèrement en bas */
+    }
+    100% {
+        opacity: 1; /* Le texte devient visible */
+        transform: translateY(0); /* Le texte se place à sa position finale */
+    }
+}
+.intro-image img {
+    animation: slideIn 1s ease-out;
+}
+@media screen and (max-width: 768px) {
+    #accueil.intro {
+        flex-direction: column; /* Disposer le texte et l'image verticalement sur les petits écrans */
+        padding: 20px;
+    }
+    .intro-text {
+        margin-top: 20px;
+        text-align: left; /* Aligner le texte à gauche */
+        padding: 0; /* Supprimer les marges/paddings superflus */
+        width: 100%; /* Assurez-vous que la largeur soit pleine */
+    }
+
+    .intro-text h1 {
+        font-size: 30px; /* Réduire la taille du titre sur les petits écrans */
+        margin: 0; /* Supprimer la marge par défaut */
+        padding-top: 0; /* Assurer qu'il soit tout en haut */
+    }
+
+    .intro-text p {
+        font-size: 16px;
+        margin-top: 20px; /* Un petit espace entre le titre et le paragraphe */
+        text-align: left; 
+        color: #ffffff;
+        background: rgba(0, 0, 0, 0.2);  
+        border-radius: 10px;
+        padding: 10px;
+        margin: 0px;
+        z-index: 2;
+        position: absolute;
+    }
+    .intro-image img {
+        max-width: 100%; /* Réduire la taille de l'image sur les petits écrans */
+        height: auto;
+        
+    }
+    .button {
+        bottom: 10px;  /* Ajuster la distance du bas sur les petits écrans */
+        font-size: 1.1rem;  /* Taille du texte plus petite */
+        position: absolute; /* Permet de positionner le bouton */
+        bottom: 20px; /* Distance du bas de la section */
+        left: 50%;  /* Centrer horizontalement */
+        transform: translateX(-50%); /* Ajuster le centering */
+        z-index: 3; /* S'assurer que le bouton reste au-dessus des autres éléments */
+    
+    }
+    .logo-img {
+        width: 130px; /* Ajuste la taille de l'image */
+        height: 60px; /* Assure un format carré */
+   
+    }
+    .logo{
+        right: 15px;
+    }
+}
+section {
+    scroll-margin-top: 100px; /* Ajuste la valeur selon la hauteur de ta barre de navigation */
+}
